@@ -15,6 +15,11 @@ namespace DE_Store_Program.Controllers
             return View();
         }
 
+        public ActionResult PriceControl()
+        {
+            return View(); 
+        }
+
         public ActionResult ProductDetail()
         {
             ViewBag.Message = "the Current Stock that the Store has";

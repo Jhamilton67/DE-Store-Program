@@ -14,6 +14,18 @@ namespace DE_Store_Program.Controllers
             return View();
         }
 
+        public ActionResult FinanceApproval()
+        {
+            ViewBag.Message = "This is a little Test to make sure that the customer is eligable to have the product" +
+                "on Finance."; 
+            return View();
+        }
+
+        public ActionResult LoyaltyScheme()
+        {
+            return View();
+        }
+
         public ActionResult Create()
         {
             return View();
