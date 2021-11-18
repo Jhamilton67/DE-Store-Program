@@ -9,7 +9,7 @@ namespace DE_Store_Program.Models
     {
         public int ProductID { get; set; }
         public string Name { get; set; }
-        public int Price { get; set; }
+        public decimal Price { get; set; }
         public int Quanitity { get; set; }
 
         public int SaleID { get; set; }
