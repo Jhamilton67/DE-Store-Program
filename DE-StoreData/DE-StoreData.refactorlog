@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="767a86f2-c2db-432f-ae8c-2cac24d4003b" ChangeDateTime="11/22/2021 15:40:43">
+    <Property Name="ElementName" Value="[dbo].[BuyNowPayLater].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BuyNowPayLater]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CustomerID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="bbcabe96-1810-4441-bb54-3d65d0f8566e" ChangeDateTime="11/22/2021 15:40:58">
+    <Property Name="ElementName" Value="[dbo].[BuyNowPayLater].[CustomerID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BuyNowPayLater]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="033ec2c7-8172-4846-aebe-1ede2726bd84" ChangeDateTime="11/22/2021 15:41:45">
+    <Property Name="ElementName" Value="[dbo].[BuyNowPayLater].[FIrstName]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BuyNowPayLater]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FirstName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1d60f506-7b05-4eb1-8f11-8dcd3bc4c67d" ChangeDateTime="11/22/2021 15:41:51">
+    <Property Name="ElementName" Value="[dbo].[BuyNowPayLater].[LAs]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BuyNowPayLater]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="LastName" />
+  </Operation>
+</Operations>

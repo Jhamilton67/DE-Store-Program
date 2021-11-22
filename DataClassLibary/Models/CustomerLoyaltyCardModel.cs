@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DataClassLibary.Models
+{
+    public class CustomerLoyaltyCardModel
+    {
+        public int Id { get; set; }
+        public int CustomerID { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public Boolean Employeed { get; set; }
+        public Boolean BuyNowPayLater { get; set; }
+    }
+}

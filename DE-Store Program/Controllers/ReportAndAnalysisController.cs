@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DE_Store_Program.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,22 @@ namespace DE_Store_Program.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult ReportData()
+        {
+            List<ReportsAndAnalysis> reportAndAnalyses = new List<ReportsAndAnalysis>();
+
+            return View();
+        }
+
+        public ActionResult ReportandAnalysisData()
+        {
+            List<ReportsAndAnalysis> analyses = new List<ReportsAndAnalysis>();
+
+            analyses.Add(new ReportsAndAnalysis {ReportID = 124431, ShopName = "DeStore1", ItemsSold = 122112, CustomerFootFall = 88968851 });
+
+            return View(analyses);
         }
 
         // GET: ReportAndAnalysis/Details/5

@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace DE_Store_Program.Models
+namespace DataClassLibary.Models
 {
-    public class ProductViewModel
+    public class ProductsModel
     {
-        public int ID { get; set; }
+        public int SaleID { get; set; }
         public string Name { get; set; }
         public int Price { get; set; }
         public int Quantity { get; set; }
-        
     }
 }

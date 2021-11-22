@@ -9,7 +9,6 @@ namespace DE_Store_Program.Models
     {
         public int SaleID { get; set; } 
         public int SaleType { get; set; }
-
         public virtual ICollection<ProductRecords> GetProducts { get; set; }
     }
 }

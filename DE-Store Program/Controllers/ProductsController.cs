@@ -27,6 +27,11 @@ namespace DE_Store_Program.Controllers
             return View();
         }
 
+        public ActionResult StockLevelsForManager()
+        {
+            return View();
+        }
+            
         public ActionResult ProductData()
         {
             List<ProductRecords> ProductData = new List<ProductRecords>
