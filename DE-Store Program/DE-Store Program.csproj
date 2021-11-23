@@ -254,6 +254,7 @@
     <Content Include="Views\Products\Delete.cshtml" />
     <Content Include="Views\Customer\FinanceApproval.cshtml" />
     <Content Include="Views\ReportAndAnalysis\ReportandAnalysisData.cshtml" />
+    <Content Include="Views\Products\LoadProducts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

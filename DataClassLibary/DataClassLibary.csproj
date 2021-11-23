@@ -46,6 +46,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BuisnessLogic\CustomerLCProcessor.cs" />
+    <Compile Include="BuisnessLogic\ProductProcessor.cs" />
+    <Compile Include="BuisnessLogic\ReportsandAnalysisProcessor.cs" />
     <Compile Include="DataAccess\DE-StoreDA.cs" />
     <Compile Include="Models\CustomerLoyaltyCardModel.cs" />
     <Compile Include="Models\ProductRecordsModel.cs" />

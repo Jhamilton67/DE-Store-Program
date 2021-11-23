@@ -30,12 +30,14 @@ namespace DE_Store_Program.Controllers
         {
            if (ModelState.IsValid)
            {
-               //int  RecordsCreated = CreateCustomer(loyaltyCard.CustomerID, 
-               //     loyaltyCard.FirstName, 
-               //     loyaltyCard.LastName, 
-               //     loyaltyCard.Email,
-               //     loyaltyCard.BuyNowPayLater);
-               // return RedirectToAction("Index");
+                CreateCustomer(loyaltyCard.CustomerID, 
+                    loyaltyCard.FirstName, 
+                    loyaltyCard.LastName, 
+                    loyaltyCard.Email, 
+                    loyaltyCard.Employeed, 
+                    loyaltyCard.BuyNowPayLater);
+
+                return RedirectToAction("Index");
            }
 
             return View();

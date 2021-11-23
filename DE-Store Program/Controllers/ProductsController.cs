@@ -1,4 +1,6 @@
-﻿using DE_Store_Program.Models;
+﻿using static DataClassLibary.BuisnessLogic.ProductProcessor;
+using DataClassLibary.Models;
+using DE_Store_Program.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +28,27 @@ namespace DE_Store_Program.Controllers
             List<ProductRecords> productRecordsInfo = new List<ProductRecords>();
             return View();
         }
+
+       public ActionResult LoadProducts()
+       {
+            ViewBag.Message = "Products list";
+            var data = GetProducts();
+            List<ProductsModel> products = new List<ProductsModel>();
+
+            foreach (var row in data)
+            {
+                products.Add(new ProductsModel
+                {
+                    SaleID = row.SaleID,
+                    ProductID = row.ProductID, 
+                    Name = row.Name, 
+                    Price = row.Price, 
+                    Quantity = row.Quantity
+                });
+            }
+
+            return View();
+       }
 
         public ActionResult StockLevelsForManager()
         {

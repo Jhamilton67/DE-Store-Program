@@ -13,7 +13,7 @@ namespace DataClassLibary.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-        public Boolean Employeed { get; set; }
-        public Boolean BuyNowPayLater { get; set; }
+        public string Employeed { get; set; }
+        public string BuyNowPayLater { get; set; }
     }
 }

@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace DataClassLibary.BuisnessLogic
 {
-    public class CustomerLCProcessor
+    public static class CustomerLCProcessor
     {
         public static int CreateCustomer(int customerID, string firstName, string lastName, string email,
-          Boolean employeed, Boolean buynowpaylater)
+          string employeed, string buynowpaylater)
         {
             CustomerLoyaltyCardModel data = new CustomerLoyaltyCardModel
             {
@@ -21,6 +21,7 @@ namespace DataClassLibary.BuisnessLogic
                 Email = email,
                 Employeed = employeed,
                 BuyNowPayLater = buynowpaylater
+              
             };
 
             string sql = @"insert into DE-StoreData.BuyNowPaylater (CustomerID, FirstName, LastName, Email, Employeed,

@@ -29,10 +29,10 @@ namespace DE_Store_Program.Models
         [Compare("Email", ErrorMessage ="The Email and the Comfirm Email must Match.")]
         public string ConfirmEmail { get; set; }
 
-        public Boolean Employeed { get; set; }
+        public string Employeed { get; set; }
         #region Finance Approval 
         [Display(Name = "Buy now Pay Later")]
-        public Boolean BuyNowPayLater { get; set; }
+        public string BuyNowPayLater { get; set; }
         #endregion
     }
 }
