@@ -6,11 +6,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace DE_Store_Program.Controllers
-{
+{   [Authorize]
     public class ProductsController : Controller
-    {   [Authorize]
+    {
+        private DbSet<ProductsModel> ProductsModels { get; set; }
+
         // GET: Products
         public ActionResult Index()
         {
@@ -30,6 +33,7 @@ namespace DE_Store_Program.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult LoadProducts()
        {
             ViewBag.Message = "Products list";
@@ -67,9 +71,38 @@ namespace DE_Store_Program.Controllers
             return View(ProductData);
         }
 
+        public ActionResult Create(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.NotFound);
+            }
+            ProductsModel Products = ProductsModels.Find(id);
+            if (Products == null)
+            {
+                return HttpNotFound();
+            }
+            return View(Products);
+        }
+
         public ActionResult Create()
         {
             return View();
+        }
+
+        public ActionResult Edit(int? id)
+        {
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.NotFound);
+            }
+            ProductsModel Products = ProductsModels.Find(id);
+            if (Products == null)
+            {
+                return HttpNotFound();
+            }
+            return View(Products);
         }
 
         public ActionResult Edit()
@@ -77,9 +110,24 @@ namespace DE_Store_Program.Controllers
             return View();
         }
 
+        public ActionResult Delete(int? id)
+        {
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.NotFound);
+            }
+            ProductsModel Products = ProductsModels.Find(id);
+            if (Products == null)
+            {
+                return HttpNotFound();
+            }
+            return View(Products);
+        }
+
         public ActionResult Delete()
         {
-            return Delete();
+            return View(); 
         }
 
     }

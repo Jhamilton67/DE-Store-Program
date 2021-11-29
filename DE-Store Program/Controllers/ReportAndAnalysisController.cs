@@ -1,14 +1,19 @@
-﻿using DE_Store_Program.Models;
+﻿using DataClassLibary.Models;
+using DE_Store_Program.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
 namespace DE_Store_Program.Controllers
 {
+    [Authorize]
     public class ReportAndAnalysisController : Controller
-    {   [Authorize]
+    {  
+        private DbSet<ReportsAnalysisModel> Reports { get; set; }
+
         // GET: ReportAndAnalysis
         public ActionResult Index()
         {
@@ -32,19 +37,29 @@ namespace DE_Store_Program.Controllers
         }
 
         // GET: ReportAndAnalysis/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
             return View();
         }
 
         // GET: ReportAndAnalysis/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.NotFound);
+            }
+            ReportsAnalysisModel Products = Reports.Find(id);
+            if (Products == null)
+            {
+                return HttpNotFound();
+            }
+            return View(Products);
         }
 
         // POST: ReportAndAnalysis/Create
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(FormCollection collection)
         {
             try
@@ -60,13 +75,23 @@ namespace DE_Store_Program.Controllers
         }
 
         // GET: ReportAndAnalysis/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.NotFound);
+            }
+            ReportsAnalysisModel Products = Reports.Find(id);
+            if (Products == null)
+            {
+                return HttpNotFound();
+            }
+            return View(Products);
         }
 
         // POST: ReportAndAnalysis/Edit/5
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, FormCollection collection)
         {
             try
@@ -82,13 +107,23 @@ namespace DE_Store_Program.Controllers
         }
 
         // GET: ReportAndAnalysis/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.NotFound);
+            }
+            ReportsAnalysisModel Products = Reports.Find(id);
+            if (Products == null)
+            {
+                return HttpNotFound();
+            }
+            return View(Products);
         }
 
         // POST: ReportAndAnalysis/Delete/5
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, FormCollection collection)
         {
             try

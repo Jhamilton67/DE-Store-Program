@@ -7,11 +7,15 @@ using System.Web;
 using System.Web.Mvc;
 using DataClassLibary.Models;
 using System.Windows.Forms;
+using System.Data.Entity;
 
 namespace DE_Store_Program.Controllers
 {
+    [Authorize]
     public class CustomerController : Controller
-    {   [Authorize]
+    {
+        private DbSet<CustomerLoyaltyCardModel> Customers { get; set; }
+
         // GET: Customer
         public ActionResult Index()
         {
@@ -75,14 +79,56 @@ namespace DE_Store_Program.Controllers
             return View();
         }
 
+        public ActionResult Create(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.NotFound);
+            }
+            CustomerLoyaltyCardModel Products = Customers.Find(id);
+            if (Products == null)
+            {
+                return HttpNotFound();
+            }
+            return View(Products);
+        }
+
         public ActionResult Create()
         {
             return View();
         }
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.NotFound);
+            }
+            CustomerLoyaltyCardModel Products = Customers.Find(id);
+            if (Products == null)
+            {
+                return HttpNotFound();
+            }
+            return View(Products);
+        }
+
 
         public ActionResult Edit()
         {
             return View();
+        }
+
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.NotFound);
+            }
+            CustomerLoyaltyCardModel Products = Customers.Find(id);
+            if (Products == null)
+            {
+                return HttpNotFound();
+            }
+            return View(Products);
         }
 
         public ActionResult Delete()
