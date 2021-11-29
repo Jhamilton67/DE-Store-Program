@@ -8,6 +8,10 @@ namespace DE_Store_Program.Models
 {
     public class ProductRecords
     {
+        [Display(Name = "Sale ID ")]
+        [Range(10000, 99999, ErrorMessage = "You Need To enter a Valid Sale ID")]
+        public int SaleID { get; set; }
+
         [Display(Name = "Product ID")]
         [Range(10000, 99999, ErrorMessage = "You Need To enter a Valid Customer ID")]
         public int ProductID { get; set; }
@@ -21,7 +25,5 @@ namespace DE_Store_Program.Models
         [Display(Name = "Quantity")]
         public int Quanitity { get; set; }
 
-        [Display(Name = "Sale ID ")]
-        public int SaleID { get; set; }
     }
 }

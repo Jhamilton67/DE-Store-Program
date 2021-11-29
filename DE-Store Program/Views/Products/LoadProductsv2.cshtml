@@ -1,18 +1,13 @@
-﻿@model IEnumerable<DE_Store_Program.Models.ProductRecords>
-
-@{
-    ViewBag.Title = "LoadProducts";
-}
-+
-<h2>Load Products</h2>
-<body style="background-color:lightpink">
-</body>
+﻿@model IEnumerable<DataClassLibary.Models.ProductsModel>
 
 <p>
-    @Html.ActionLink("Add Products", "Products")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SaleID)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.ProductID)
         </th>
@@ -23,16 +18,16 @@
             @Html.DisplayNameFor(model => model.Price)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Quanitity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SaleID)
+            @Html.DisplayNameFor(model => model.Quantity)
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SaleID)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.ProductID)
         </td>
@@ -43,10 +38,7 @@
             @Html.DisplayFor(modelItem => item.Price)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Quanitity)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SaleID)
+            @Html.DisplayFor(modelItem => item.Quantity)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |

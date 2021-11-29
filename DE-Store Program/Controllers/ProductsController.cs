@@ -29,7 +29,8 @@ namespace DE_Store_Program.Controllers
             return View();
         }
 
-       public ActionResult LoadProducts()
+        [HttpPost]
+        public ActionResult LoadProducts()
        {
             ViewBag.Message = "Products list";
             var data = GetProducts();
@@ -57,13 +58,12 @@ namespace DE_Store_Program.Controllers
             
         public ActionResult ProductData()
         {
-            List<ProductRecords> ProductData = new List<ProductRecords>
-            {
-                new ProductRecords { SaleID = 5754, ProductID = 1243124, Name = "Hammer", Price = 2500, Quanitity = 1 },
-                new ProductRecords { SaleID = 5812, ProductID = 53241, Name = "Green Paint", Price = 5000, Quanitity = 3 },
-                new ProductRecords { SaleID = 5987, ProductID = 89648, Name = "WallPaper", Price = 50, Quanitity = 1 }
-            };
+            List<ProductRecords> ProductData = new List<ProductRecords>();
 
+            ProductData.Add(new ProductRecords { SaleID = 5754, ProductID = 1243124, Name = "Hammer", Price = 200, Quanitity = 1 });
+            ProductData.Add(new ProductRecords { SaleID = 5812, ProductID = 53241, Name = "Green Paint", Price = 5000, Quanitity = 3 });
+            ProductData.Add(new ProductRecords { SaleID = 5987, ProductID = 89648, Name = "WallPaper", Price = 50, Quanitity = 1 });
+            
             return View(ProductData);
         }
 
