@@ -259,10 +259,24 @@
     <Content Include="Views\Customer\CustomerListData.cshtml" />
     <Content Include="Views\Customer\CustomerData.cshtml" />
     <Content Include="Views\Products\LoadProductsv2.cshtml" />
+    <Content Include="Views\Sales\SaleData.cshtml" />
+    <Content Include="Views\Sales\Index.cshtml" />
+    <Content Include="Views\Sales\Details.cshtml" />
+    <Content Include="Views\Sales\Create.cshtml" />
+    <Content Include="Views\Sales\Edit.cshtml" />
+    <Content Include="Views\Sales\Delete.cshtml" />
+    <Content Include="Views\ReportAndAnalysis\Details.cshtml" />
+    <Content Include="Views\ReportAndAnalysis\Create.cshtml" />
+    <Content Include="Views\ReportAndAnalysis\Edit.cshtml" />
+    <Content Include="Views\ReportAndAnalysis\Delete.cshtml" />
+    <Content Include="Views\Customer\Create.cshtml" />
+    <Content Include="Views\Customer\Edit.cshtml" />
+    <Content Include="Views\Customer\Delete.cshtml" />
+    <Content Include="Views\ReportAndAnalysis\Index.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Sales\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

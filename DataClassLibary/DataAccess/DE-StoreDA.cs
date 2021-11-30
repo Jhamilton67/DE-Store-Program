@@ -9,7 +9,7 @@ namespace DataClassLibary.DataAccess
 {
     public class DE_StoreDA
     {
-        public static string GetConnectionString(string ConnectionName = "DE-StoreData")
+        public static string GetConnectionString(string ConnectionName = "DE-StroreDB")
         {
             return ConfigurationManager.ConnectionStrings[ConnectionName].ConnectionString;
         }

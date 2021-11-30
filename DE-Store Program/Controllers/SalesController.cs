@@ -1,4 +1,5 @@
 ﻿using DataClassLibary.Models;
+using DE_Store_Program.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -8,20 +9,42 @@ using System.Web.Mvc;
 
 namespace DE_Store_Program.Controllers
 {
+    [Authorize]
     public class SalesController : Controller
     {
         private DbSet<ProductsModel> dbSet { get; set; }
         // GET: Sales
         public ActionResult Index()
         {
+            List<SaleRecords> saleRecords = new List<SaleRecords>(); 
+
             return View();
+        }
+
+        public ActionResult SaleData()
+        {
+            List<SaleRecords> records = new List<SaleRecords>();
+
+            records.Add(new SaleRecords { SaleID = 12421, SaleType = "Card" });
+            records.Add(new SaleRecords { SaleID = 123121, SaleType = "Money" });
+            records.Add(new SaleRecords { SaleID = 12421, SaleType = "Buy Now Pay Later" });
+
+            return View(records);
         }
 
         // GET: Sales/Details/5
         public ActionResult Details(int? id)
         {
-
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.NotFound);
+            }
+            ProductsModel Products = dbSet.Find(id);
+            if (Products == null)
+            {
+                return HttpNotFound();
+            }
+            return View(Products);
 
         } 
 

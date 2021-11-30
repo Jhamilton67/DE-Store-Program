@@ -1,0 +1,48 @@
+﻿@model IEnumerable<DE_Store_Program.Models.SaleRecords>
+
+
+@{
+    ViewBag.Title = "Sale Data";
+}
+
+<body style="background-color:lightpink">
+</body>
+
+<h2>Sale Data</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<body style="font:bolder">
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SaleID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SaleType)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SaleID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SaleType)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>

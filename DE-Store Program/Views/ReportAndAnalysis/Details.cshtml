@@ -1,0 +1,52 @@
+﻿@model DE_Store_Program.Models.ReportsAndAnalysis
+
+<div>
+    <h4>ReportsAndAnalysis</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ReportID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReportID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShopName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShopName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemsSold)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemsSold)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerFootFall)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerFootFall)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -17,11 +17,6 @@ namespace DE_Store_Program.Controllers
         // GET: ReportAndAnalysis
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public ActionResult ReportData()
-        {
             List<ReportsAndAnalysis> reportAndAnalyses = new List<ReportsAndAnalysis>();
 
             return View();
@@ -39,7 +34,16 @@ namespace DE_Store_Program.Controllers
         // GET: ReportAndAnalysis/Details/5
         public ActionResult Details(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.NotFound);
+            }
+            ReportsAnalysisModel Products = Reports.Find(id);
+            if (Products == null)
+            {
+                return HttpNotFound();
+            }
+            return View(Products);
         }
 
         // GET: ReportAndAnalysis/Create

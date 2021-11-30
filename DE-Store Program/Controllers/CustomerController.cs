@@ -19,6 +19,8 @@ namespace DE_Store_Program.Controllers
         // GET: Customer
         public ActionResult Index()
         {
+            ViewBag.Message = "This is a list of all of the Data that we currently have of each Customer";
+            List<CustomerLoyaltyCardModel> customers = new List<CustomerLoyaltyCardModel>();
             return View();
         }
 
@@ -27,13 +29,6 @@ namespace DE_Store_Program.Controllers
             ViewBag.Message = "This is a little Test to make sure that the customer is eligable to have the product" +
                 "on Finance."; 
             return View();
-        }
-
-        public ActionResult CustomerData()
-        {
-            ViewBag.Message = "This is a list of all of the Data that we currently have of each Customer";
-            List<CustomerLoyaltyCardModel> customers = new List<CustomerLoyaltyCardModel>();
-            return View(); 
         }
 
         public ActionResult CustomerListData()
