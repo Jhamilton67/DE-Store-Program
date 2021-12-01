@@ -48,11 +48,13 @@
     <Compile Include="BuisnessLogic\CustomerLCProcessor.cs" />
     <Compile Include="BuisnessLogic\ProductProcessor.cs" />
     <Compile Include="BuisnessLogic\ReportsandAnalysisProcessor.cs" />
+    <Compile Include="BuisnessLogic\SaleProcessor.cs" />
     <Compile Include="DataAccess\DE-StoreDA.cs" />
     <Compile Include="Models\CustomerLoyaltyCardModel.cs" />
     <Compile Include="Models\ProductRecordsModel.cs" />
     <Compile Include="Models\ProductsModel.cs" />
     <Compile Include="Models\ReportsAnalysisModel.cs" />
+    <Compile Include="Models\SaleModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

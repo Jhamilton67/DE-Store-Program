@@ -13,6 +13,8 @@ namespace DE_Store_Program.Controllers
     [Authorize]
     public class ManageController : Controller
     {
+
+        #region Login Methods
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -332,8 +334,10 @@ namespace DE_Store_Program.Controllers
 
             base.Dispose(disposing);
         }
+        #endregion
 
-#region Helpers
+
+        #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
 

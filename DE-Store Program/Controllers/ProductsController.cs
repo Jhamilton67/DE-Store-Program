@@ -12,6 +12,7 @@ namespace DE_Store_Program.Controllers
 {   [Authorize]
     public class ProductsController : Controller
     {
+        #region DataHolders Method's
         private DbSet<ProductsModel> ProductsModels { get; set; }
 
         // GET: Products
@@ -71,6 +72,10 @@ namespace DE_Store_Program.Controllers
             return View(ProductData);
         }
 
+        #endregion
+
+        #region Create Method
+
         public ActionResult Create(int? id)
         {
             if (id == null)
@@ -89,6 +94,10 @@ namespace DE_Store_Program.Controllers
         {
             return View();
         }
+
+        #endregion
+
+        #region Edit Method
 
         public ActionResult Edit(int? id)
         {
@@ -110,6 +119,10 @@ namespace DE_Store_Program.Controllers
             return View();
         }
 
+        #endregion
+
+        #region Delete Method
+
         public ActionResult Delete(int? id)
         {
 
@@ -130,5 +143,6 @@ namespace DE_Store_Program.Controllers
             return View(); 
         }
 
+        #endregion
     }
 }

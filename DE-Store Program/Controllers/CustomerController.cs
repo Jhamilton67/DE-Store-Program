@@ -14,6 +14,7 @@ namespace DE_Store_Program.Controllers
     [Authorize]
     public class CustomerController : Controller
     {
+        #region DataHolders Method's
         private DbSet<CustomerLoyaltyCardModel> Customers { get; set; }
 
         // GET: Customer
@@ -44,7 +45,6 @@ namespace DE_Store_Program.Controllers
             return View(customersModel); 
         }
 
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult FinanceApproval(CustomerLoyaltyCardModel loyaltyCard)
@@ -74,6 +74,9 @@ namespace DE_Store_Program.Controllers
             return View();
         }
 
+        #endregion
+
+        #region Create Method
         public ActionResult Create(int? id)
         {
             if (id == null)
@@ -88,10 +91,25 @@ namespace DE_Store_Program.Controllers
             return View(Products);
         }
 
-        public ActionResult Create()
+        public ActionResult Create(CustomerLoyaltyCardModel customer)
         {
+            if (ModelState.IsValid)
+            {
+                CreateCustomer(customer.CustomerID, 
+                    customer.FirstName, 
+                    customer.LastName, 
+                    customer.Email, 
+                    customer.Employeed, 
+                    customer.BuyNowPayLater);
+
+                return RedirectToAction("Index");
+            }
             return View();
         }
+
+        #endregion
+
+        #region Edit Method
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -109,9 +127,17 @@ namespace DE_Store_Program.Controllers
 
         public ActionResult Edit()
         {
+            if (ModelState.IsValid)
+            {
+
+            }
+
             return View();
         }
 
+        #endregion
+
+        #region Delete Method
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -128,7 +154,13 @@ namespace DE_Store_Program.Controllers
 
         public ActionResult Delete()
         {
+            if (ModelState.IsValid)
+            {
+
+            }
+
             return View();
         }
+        #endregion
     }
 }

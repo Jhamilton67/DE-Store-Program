@@ -1,7 +1,5 @@
 ﻿@model IEnumerable<DE_Store_Program.Models.CustomerLoyaltyCard>
 
-
-
 @{
     ViewBag.Title = "CustomerListData";
 }
@@ -30,9 +28,6 @@
                 @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ConfirmEmail)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Employeed)
             </th>
             <th>
@@ -55,9 +50,6 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ConfirmEmail)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Employeed)

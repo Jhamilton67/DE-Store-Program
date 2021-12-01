@@ -11,7 +11,8 @@ namespace DE_Store_Program.Controllers
 {
     [Authorize]
     public class ReportAndAnalysisController : Controller
-    {  
+    {
+        #region DataHolders Method's
         private DbSet<ReportsAnalysisModel> Reports { get; set; }
 
         // GET: ReportAndAnalysis
@@ -45,7 +46,9 @@ namespace DE_Store_Program.Controllers
             }
             return View(Products);
         }
+        #endregion
 
+        #region CreateMethod
         // GET: ReportAndAnalysis/Create
         public ActionResult Create(int? id)
         {
@@ -77,7 +80,9 @@ namespace DE_Store_Program.Controllers
                 return View();
             }
         }
+        #endregion
 
+        #region EditMethod
         // GET: ReportAndAnalysis/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -110,6 +115,10 @@ namespace DE_Store_Program.Controllers
             }
         }
 
+        #endregion
+
+        #region DeleteMethod
+
         // GET: ReportAndAnalysis/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -141,5 +150,7 @@ namespace DE_Store_Program.Controllers
                 return View();
             }
         }
+
+        #endregion
     }
 }

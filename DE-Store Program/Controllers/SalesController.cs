@@ -1,4 +1,5 @@
-﻿using DataClassLibary.Models;
+﻿using static DataClassLibary.BuisnessLogic.SaleProcessor;
+using DataClassLibary.Models;
 using DE_Store_Program.Models;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace DE_Store_Program.Controllers
     [Authorize]
     public class SalesController : Controller
     {
+        #region DataHolders Method's
         private DbSet<ProductsModel> dbSet { get; set; }
         // GET: Sales
         public ActionResult Index()
@@ -46,8 +48,11 @@ namespace DE_Store_Program.Controllers
             }
             return View(Products);
 
-        } 
+        }
 
+        #endregion
+
+        #region Create Method
         // GET: Sales/Create
         public ActionResult Create(int? id)
         {
@@ -66,19 +71,20 @@ namespace DE_Store_Program.Controllers
         // POST: Sales/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(SaleModel collection)
         {
-            try
+            if(ModelState.IsValid)
             {
-                // TODO: Add insert logic here
+                CreateSale(collection.SaleID, collection.SaleType);
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+                return RedirectToAction("Index"); 
+            };
+
+            return View();
         }
+        #endregion
+
+        #region Edit Method 
 
         // GET: Sales/Edit/5
         public ActionResult Edit(int? id)
@@ -112,7 +118,9 @@ namespace DE_Store_Program.Controllers
                 return View();
             }
         }
+        #endregion
 
+        #region Delete Method
         // GET: Sales/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -144,5 +152,7 @@ namespace DE_Store_Program.Controllers
                 return View();
             }
         }
+
+        #endregion
     }
 }
