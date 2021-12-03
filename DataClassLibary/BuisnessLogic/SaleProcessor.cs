@@ -26,5 +26,11 @@ namespace DataClassLibary.BuisnessLogic
 
         }
 
+        public static List<SaleModel> GetSales()
+        {
+            string sql = @" select SaleID, Saletype from DE-StoreData.Sales;";
+
+            return DE_StoreDA.LoadData<SaleModel>(sql);
+        }
     }
 }

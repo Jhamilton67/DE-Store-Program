@@ -23,7 +23,7 @@ namespace DE_Store_Program.Controllers
             return View();
         }
 
-        public ActionResult SaleData()
+        public ActionResult SaleData()//Method that populates the  Html list to show all the data in the correct format 
         {
             List<SaleRecords> records = new List<SaleRecords>();
 
@@ -35,6 +35,7 @@ namespace DE_Store_Program.Controllers
         }
 
         // GET: Sales/Details/5
+        //details error method 
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -54,6 +55,7 @@ namespace DE_Store_Program.Controllers
 
         #region Create Method
         // GET: Sales/Create
+        //create error method 
         public ActionResult Create(int? id)
         {
             if (id == null)
@@ -87,6 +89,7 @@ namespace DE_Store_Program.Controllers
         #region Edit Method 
 
         // GET: Sales/Edit/5
+        //edit error method 
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -122,6 +125,7 @@ namespace DE_Store_Program.Controllers
 
         #region Delete Method
         // GET: Sales/Delete/5
+        //delete error method 
         public ActionResult Delete(int? id)
         {
             if (id == null)

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace DataClassLibary.BuisnessLogic
 {
     public static class ProductProcessor
-    {
+    { //AddProduct is a method that will add data to the database 
         public static int AddProduct(int saleID, int productID, string productname, int price, int quantity)
         {
             ProductsModel data = new ProductsModel
@@ -26,7 +26,7 @@ namespace DataClassLibary.BuisnessLogic
 
             return DE_StoreDA.SaveData(sql, data);
         }
-
+        //GetProducts is a method that will add data to the database 
         public static List<ProductsModel> GetProducts()
         {
             string sql = @"select ProductID, SaleID, Name, Price, Quantity

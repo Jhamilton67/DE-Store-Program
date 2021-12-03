@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 namespace DataClassLibary.BuisnessLogic
 {
     public static class CustomerLCProcessor
-    {
+    {// this class is for processing all of the SQL commands. 
+        //create customer is a method that will add data to the database 
         public static int CreateCustomer(int customerID, string firstName, string lastName, string email,
           string employeed, string buynowpaylater)
         {
@@ -31,7 +32,7 @@ namespace DataClassLibary.BuisnessLogic
 
             return DE_StoreDA.SaveData(sql, data);
         }
-
+        // LoadCardModel is a method that will load data from the database 
         public static List<CustomerLoyaltyCardModel> LoadcardModels()
         {
             string sql = @"select CustomerID, FirstName, LastName, Email, Employeed,

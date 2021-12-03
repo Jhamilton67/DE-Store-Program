@@ -8,11 +8,13 @@ namespace DE_Store_Program.Controllers
 {
     public class HomeController : Controller
     {
+        [Authorize]
+        //my controller for the Homepage of the Website. 
         public ActionResult Index()
         {
             return View();
         }
-        [Authorize]
+      
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

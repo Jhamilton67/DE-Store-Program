@@ -77,6 +77,7 @@ namespace DE_Store_Program.Controllers
         #endregion
 
         #region Create Method
+        //create method error message 
         public ActionResult Create(int? id)
         {
             if (id == null)
@@ -108,7 +109,7 @@ namespace DE_Store_Program.Controllers
         }
 
         #endregion
-
+        //edit method error message 
         #region Edit Method
         public ActionResult Edit(int? id)
         {
@@ -136,7 +137,7 @@ namespace DE_Store_Program.Controllers
         }
 
         #endregion
-
+        //delete error message 
         #region Delete Method
         public ActionResult Delete(int? id)
         {

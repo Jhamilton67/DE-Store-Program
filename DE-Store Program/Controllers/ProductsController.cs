@@ -32,7 +32,10 @@ namespace DE_Store_Program.Controllers
             List<ProductRecords> productRecordsInfo = new List<ProductRecords>();
             return View();
         }
-
+        /// <summary>
+        /// a methof that loads all of my Products data from the database into the List formatted Html Page. 
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult LoadProducts()
@@ -75,7 +78,7 @@ namespace DE_Store_Program.Controllers
         #endregion
 
         #region Create Method
-
+        //create error method 
         public ActionResult Create(int? id)
         {
             if (id == null)
@@ -98,7 +101,7 @@ namespace DE_Store_Program.Controllers
         #endregion
 
         #region Edit Method
-
+        //edit error method
         public ActionResult Edit(int? id)
         {
 
@@ -122,7 +125,7 @@ namespace DE_Store_Program.Controllers
         #endregion
 
         #region Delete Method
-
+        //delete error method 
         public ActionResult Delete(int? id)
         {
 
